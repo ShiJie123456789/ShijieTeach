@@ -14,6 +14,16 @@ public class Student implements Serializable {
     private Date bornDate;
     private String email;
     private String identityCard;
+    //加入 gradeName
+    private String gradeName;
+
+    public String getGradeName() {
+        return gradeName;
+    }
+
+    public void setGradeName(String gradeName) {
+        this.gradeName = gradeName;
+    }
 
     public Student(Integer studentNo, String loginPwd, String studentName, String sex, Integer gradeId, String phone, String address, Date bornDate, String email, String identityCard) {
         this.studentNo = studentNo;
