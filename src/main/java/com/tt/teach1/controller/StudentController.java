@@ -73,6 +73,6 @@ public class StudentController extends BaseController {
 
     @RequestMapping(value = "/deleteStudent",method = RequestMethod.GET)
     public String deleteStudent() {
-        return "明儿 见";
+        return "明儿 123见";
     }
 }
