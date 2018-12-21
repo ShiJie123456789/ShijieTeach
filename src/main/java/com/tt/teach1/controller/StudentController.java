@@ -65,7 +65,7 @@ public class StudentController extends BaseController {
 
     //请求：http://localhost:8080/stu/getStudentList
     @RequestMapping(value = "/getStudentList",method = RequestMethod.GET)
-    @ResponseBody
+    @ResponseBody     //返回json数据使用@ResponseBody    返回页面不用写
     public Object getStudentList() {
         List<Student> list = studentService.getStudentList();
         return list;
@@ -101,5 +101,15 @@ public class StudentController extends BaseController {
             return "/student/student";
         }
         return FORWARD+"/stu/student";
+    }
+
+    @RequestMapping(value = "/getStuByNo/{studentNo}",method = RequestMethod.GET)
+    @ResponseBody
+    public Object getStuByNo(@PathVariable Integer studentNo) {
+        Student student = studentService.getStuByNo(studentNo);
+        if (student!=null){
+            return JsonResult.ok("有该学生",student);
+        }
+        return JsonResult.ok("没有该学生",student);
     }
 }
